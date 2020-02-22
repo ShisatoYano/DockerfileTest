@@ -6,11 +6,10 @@ RUN set -x && \
     apt update && \
     apt upgrade -y
 
-# installation, setting
+# installation
 RUN set -x && \
     apt install -y wget && \
-    apt install -y sudo && \
-    sudo chsh -s /bin/bash root
+    apt install -y sudo
 
 # anaconda
 RUN set -x && \
@@ -18,7 +17,7 @@ RUN set -x && \
     bash Anaconda3-2019.10-Linux-x86_64.sh -b && \
     rm Anaconda3-2019.10-Linux-x86_64.sh
 
-# path setteing
+# path setting
 ENV PATH $PATH:/root/anaconda3/bin
 
 # python library
